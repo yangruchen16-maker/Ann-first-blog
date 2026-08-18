@@ -67,55 +67,73 @@
   .intro-hero-title .accent-word{
     color:var(--accent);
   }
+
+  /* Editorial typography based on the supplied reference */
   .intro-block{
-    margin-bottom:clamp(1.75rem,3vw,2.75rem);
+    max-width:760px;
+    margin:0 0 clamp(3rem,5vw,4.5rem);
+    padding:clamp(2rem,3vw,3rem) 0;
   }
   .intro-block:last-child{ margin-bottom:2rem; }
   .intro-heading{
-    margin:0 0 clamp(3rem,5vw,4.8rem);
-    font-family:var(--font-body);
-    font-size:clamp(2rem,3.2vw,3rem);
-    font-weight:600;
-    line-height:1.25;
-    letter-spacing:.01em;
+    margin:0 0 clamp(3.2rem,5vw,4.6rem);
+    padding-left:0 !important;
+    max-width:680px;
+    font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
+    font-size:clamp(2.45rem,4vw,3.45rem);
+    font-weight:400;
+    line-height:1.42;
+    letter-spacing:.015em;
     color:var(--text-hi);
+  }
+  .intro-heading::before,
+  .intro-heading::after{
+    display:none !important;
   }
   .intro-content{
     margin-left:0;
-    max-width:1120px;
+    max-width:680px;
   }
-  .intro-content p{
-    max-width:1080px;
+  .intro-content p,
+  .report-paragraphs p{
+    max-width:640px;
     color:var(--text-lo);
-    font-size:clamp(1.18rem,1.8vw,1.45rem);
-    line-height:2.05;
-    letter-spacing:.015em;
-    margin:0 0 2.2rem;
-  }
-  .report-subheading{
-    margin:0 0 clamp(2.6rem,4vw,3.8rem);
-    font-family:var(--font-body);
-    font-size:clamp(1.5rem,2.35vw,2rem);
-    font-weight:600;
-    line-height:1.35;
-    color:var(--text-hi);
+    font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
+    font-size:clamp(1.48rem,2.2vw,1.95rem);
+    font-weight:400;
+    line-height:1.9;
+    letter-spacing:.025em;
+    text-align:left;
+    margin:0 0 2.1rem;
   }
   .report-paragraphs{
-    max-width:1100px;
+    max-width:640px;
   }
-  .report-paragraphs p{
-    text-align:left;
-    margin-bottom:2.25rem;
+  .report-paragraphs p::before{
+    display:none !important;
+  }
+  .report-subheading{
+    margin:0 0 clamp(2.1rem,3vw,3rem);
+    font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
+    font-size:clamp(1.3rem,1.8vw,1.55rem);
+    font-weight:400;
+    line-height:1.55;
+    letter-spacing:.08em;
+    color:var(--text-lo);
+  }
+  .intro-content::before{
+    display:none !important;
   }
   .intro-main-image{
     display:block;
     width:100%;
-    max-width:900px;
+    max-width:640px;
     height:auto;
-    margin-top:2.8rem;
+    margin-top:3rem;
     border-radius:4px;
     box-shadow:0 20px 50px -18px rgba(0,0,0,.55);
   }
+
   @media (max-width:720px){
     .intro-report{
       padding-top:3rem;
@@ -140,19 +158,30 @@
       font-size:clamp(2.4rem,5vw,4rem);
       line-height:1.12;
     }
-    .intro-block{ margin-bottom:1.5rem; }
-    .intro-heading{
-      margin-bottom:2.3rem;
-      font-size:clamp(1.85rem,8vw,2.35rem);
+    .intro-block{
+      margin-bottom:1.5rem;
+      padding:1.8rem 0;
     }
-    .intro-content{ margin-left:0; }
+    .intro-heading{
+      margin-bottom:3.2rem;
+      font-size:clamp(2.25rem,10vw,3rem);
+      line-height:1.42;
+    }
+    .intro-content,
+    .report-paragraphs{
+      max-width:100%;
+    }
     .report-subheading{
       margin-bottom:2rem;
-      font-size:1.45rem;
+      font-size:1.28rem;
     }
-    .intro-content p{
-      font-size:1.12rem;
-      line-height:1.95;
+    .intro-content p,
+    .report-paragraphs p{
+      max-width:100%;
+      font-size:clamp(1.38rem,6.6vw,1.72rem);
+      line-height:1.9;
+      letter-spacing:.02em;
+      margin-bottom:2rem;
     }
   }
 </style>
