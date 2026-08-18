@@ -1,4 +1,12 @@
 /* ========================================================================== 
+   全站藝術裝飾覆寫
+   ========================================================================== */
+const artOverrideStylesheet = document.createElement("link");
+artOverrideStylesheet.rel = "stylesheet";
+artOverrideStylesheet.href = "art-overrides.css";
+document.head.appendChild(artOverrideStylesheet);
+
+/* ========================================================================== 
    作品資料
    ========================================================================== */
 const ARTWORKS = [
