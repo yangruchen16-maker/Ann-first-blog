@@ -3,12 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>你的名字 — 個人介紹</title>
-<meta name="description" content="個人介紹、創作理念與經歷">
+<title>陳泱儒 — 個人介紹</title>
+<meta name="description" content="陳泱儒的個人介紹、個人經歷與繪畫過程">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .intro-report{
+    position:relative;
+    z-index:2;
+    max-width:1180px;
+    margin:0 auto;
+    padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem) 6rem;
+  }
+  .intro-block{
+    margin-bottom:clamp(6rem,11vw,10rem);
+  }
+  .intro-block:last-child{ margin-bottom:2rem; }
+  .intro-heading{
+    margin:0 0 clamp(2.8rem,5vw,4.5rem);
+    font-family:var(--font-body);
+    font-size:clamp(1.65rem,2.7vw,2.35rem);
+    font-weight:600;
+    line-height:1.25;
+    letter-spacing:.01em;
+    color:var(--text-hi);
+  }
+  .intro-content{
+    margin-left:clamp(2rem,7vw,6rem);
+    max-width:950px;
+  }
+  .intro-content p{
+    max-width:860px;
+    color:var(--text-lo);
+    font-size:clamp(1rem,1.5vw,1.18rem);
+    line-height:2;
+    margin:0 0 1.6rem;
+  }
+  .intro-main-image{
+    display:block;
+    width:100%;
+    max-width:900px;
+    height:auto;
+    margin-top:2.4rem;
+    border-radius:4px;
+    box-shadow:0 20px 50px -18px rgba(0,0,0,.55);
+  }
+  .experience-list,
+  .drawing-list{
+    display:grid;
+    gap:2rem;
+    max-width:860px;
+  }
+  .experience-item,
+  .drawing-item{
+    padding-top:1rem;
+    border-top:1px solid rgba(245,240,228,.14);
+  }
+  .experience-item h3,
+  .drawing-item h3{
+    margin:0 0 .55rem;
+    font-family:var(--font-body);
+    font-size:1.05rem;
+    font-weight:600;
+  }
+  .experience-item p,
+  .drawing-item p{ margin:0; }
+  .drawing-list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  @media (max-width:720px){
+    .intro-report{ padding-top:3rem; }
+    .intro-block{ margin-bottom:5rem; }
+    .intro-heading{ margin-bottom:2rem; }
+    .intro-content{ margin-left:1.2rem; }
+    .drawing-list{ grid-template-columns:1fr; }
+  }
+</style>
 </head>
 <body>
 <div class="pinboard-texture" aria-hidden="true"></div>
@@ -16,7 +88,7 @@
 <header class="site-header" id="top">
   <a class="brand" href="index.html">
     <span class="brand-mark">畫</span>
-    <span class="brand-name">你的名字<span class="brand-dot">．</span>作品集</span>
+    <span class="brand-name">陳泱儒<span class="brand-dot">．</span>作品集</span>
   </a>
   <nav class="main-nav" aria-label="主導覽">
     <a href="index.html" aria-current="page" style="color:var(--text-hi);border-bottom:1px solid var(--accent);">個人介紹</a>
@@ -28,64 +100,64 @@
   </button>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">PERSONAL INTRODUCTION — 2026</p>
-      <h1 class="hero-title">
-        <span class="line">你好，</span>
-        <span class="line line-em">這裡是我的創作世界。</span>
-      </h1>
-      <p class="hero-desc">
-        這一頁專門介紹我是誰、我正在學什麼，以及我如何看待創作。作品本身則獨立收錄在作品集頁面，讓每個主題都有自己的空間。
+<main class="intro-report">
+  <section class="intro-block">
+    <h1 class="intro-heading">陳泱儒</h1>
+    <div class="intro-content">
+      <p>
+        這裡是我的個人介紹與創作紀錄。我用作品整理自己的觀察、學習與想法，也把不同階段的嘗試保留下來。
       </p>
-      <div class="hero-actions">
-        <a href="portfolio.html" class="btn btn-primary">前往作品集</a>
-        <a href="contact.html" class="btn btn-ghost">聯絡我</a>
+      <img class="intro-main-image" src="assets/intro-image.svg" alt="陳泱儒個人介紹主視覺">
+    </div>
+  </section>
+
+  <section class="intro-block">
+    <h2 class="intro-heading">個人經歷</h2>
+    <div class="intro-content">
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>學習與探索</h3>
+          <p>持續接觸不同的創作方式，從觀察、練習到完成作品，逐步整理出自己的方向。</p>
+        </div>
+        <div class="experience-item">
+          <h3>作品累積</h3>
+          <p>透過繪畫與個人專案記錄不同階段的想法，讓作品不只是成果，也成為學習過程的一部分。</p>
+        </div>
+        <div class="experience-item">
+          <h3>持續前進</h3>
+          <p>希望繼續嘗試不同媒材、構圖與表現方式，並將新的作品陸續更新到作品集。</p>
+        </div>
       </div>
     </div>
-
-    <div class="hero-board" style="height:auto;display:flex;align-items:center;justify-content:center;">
-      <img src="assets/intro-image.svg" alt="個人介紹主視覺" style="display:block;width:100%;max-width:620px;height:auto;border-radius:4px;box-shadow:0 20px 50px -18px rgba(0,0,0,.55);">
-    </div>
   </section>
 
-  <section class="about-section" style="grid-template-columns:1fr;max-width:900px;">
-    <div class="about-content">
-      <p class="eyebrow">01 — 關於我</p>
-      <h2>個人介紹</h2>
-      <p>
-        在這裡放入你的個人背景，例如目前的學習階段、興趣、擅長的媒材，以及開始創作的原因。這一頁的重點是讓第一次來到網站的人快速認識你。
-      </p>
-      <p>
-        也可以補上你的創作理念、近期目標，或對未來想探索方向的描述。之後只要替換文字，就能把這個版型變成真正屬於你的個人頁面。
-      </p>
-      <ul class="about-stats">
-        <li><span class="stat-num">01</span><span class="stat-label">個人介紹</span></li>
-        <li><span class="stat-num">02</span><span class="stat-label">作品展示</span></li>
-        <li><span class="stat-num">03</span><span class="stat-label">聯絡方式</span></li>
-      </ul>
-      <a href="portfolio.html" class="btn btn-primary">看我的作品</a>
+  <section class="intro-block">
+    <h2 class="intro-heading">繪畫過程</h2>
+    <div class="intro-content">
+      <div class="drawing-list">
+        <div class="drawing-item">
+          <h3>觀察</h3>
+          <p>先整理主題、姿態、光線與想表達的情緒，蒐集需要的參考資料。</p>
+        </div>
+        <div class="drawing-item">
+          <h3>草稿</h3>
+          <p>用簡單線條確認構圖與比例，反覆調整畫面中各元素的位置。</p>
+        </div>
+        <div class="drawing-item">
+          <h3>塑造</h3>
+          <p>逐步加入明暗、色彩與細節，讓畫面的主體與空間關係更完整。</p>
+        </div>
+        <div class="drawing-item">
+          <h3>完成</h3>
+          <p>最後檢查整體視覺重心、細節與留白，完成作品並整理創作紀錄。</p>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <section class="process-section">
-    <div class="section-head">
-      <p class="eyebrow">02 — MY STORY</p>
-      <h2>我的創作路線</h2>
-      <p class="section-desc">這裡可以依你的真實經歷，改成學習歷程、重要事件或創作階段。</p>
-    </div>
-    <ol class="process-steps">
-      <li class="process-step"><span class="step-index">01</span><h3>開始</h3><p>寫下你第一次開始創作、畫畫或接觸設計的契機。</p></li>
-      <li class="process-step"><span class="step-index">02</span><h3>探索</h3><p>記錄你嘗試過的媒材、風格與不同的練習方式。</p></li>
-      <li class="process-step"><span class="step-index">03</span><h3>累積</h3><p>把重要作品、比賽、課程或個人專案整理成自己的軌跡。</p></li>
-      <li class="process-step"><span class="step-index">04</span><h3>下一步</h3><p>說明接下來希望挑戰的方向，讓網站也成為持續更新的學習紀錄。</p></li>
-    </ol>
   </section>
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 你的名字．保留所有權利</p>
+  <p>© 2026 陳泱儒．保留所有權利</p>
   <div class="footer-links">
     <a href="portfolio.html">作品集</a>
     <a href="contact.html">聯絡</a>
