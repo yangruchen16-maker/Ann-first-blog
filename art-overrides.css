@@ -1,4 +1,13 @@
 /* Organic edge dots — irregular, layered, no square grids */
+:root{
+  --dot-main-strong: rgba(233,120,50,.95);
+  --dot-main: rgba(233,120,50,.78);
+  --dot-main-soft: rgba(233,120,50,.58);
+  --dot-light-strong: rgba(255,249,243,.70);
+  --dot-light: rgba(255,249,243,.48);
+  --dot-light-soft: rgba(255,249,243,.34);
+}
+
 body::after{
   display:none !important;
 }
@@ -10,12 +19,12 @@ body::before{
   height:250px !important;
   opacity:.72 !important;
   background:
-    radial-gradient(circle at 18% 14%, rgba(233,120,50,.95) 0 8px, transparent 8.6px),
-    radial-gradient(circle at 51% 25%, rgba(255,249,243,.70) 0 3px, transparent 3.6px),
-    radial-gradient(circle at 73% 44%, rgba(233,120,50,.82) 0 5px, transparent 5.7px),
-    radial-gradient(circle at 34% 61%, rgba(255,249,243,.48) 0 2.5px, transparent 3px),
-    radial-gradient(circle at 64% 78%, rgba(233,120,50,.68) 0 4px, transparent 4.7px),
-    radial-gradient(circle at 27% 88%, rgba(255,249,243,.38) 0 2px, transparent 2.6px) !important;
+    radial-gradient(circle at 18% 14%, var(--dot-main-strong) 0 8px, transparent 8.6px),
+    radial-gradient(circle at 51% 25%, var(--dot-light-strong) 0 3px, transparent 3.6px),
+    radial-gradient(circle at 73% 44%, var(--dot-main) 0 5px, transparent 5.7px),
+    radial-gradient(circle at 34% 61%, var(--dot-light) 0 2.5px, transparent 3px),
+    radial-gradient(circle at 64% 78%, var(--dot-main-soft) 0 4px, transparent 4.7px),
+    radial-gradient(circle at 27% 88%, var(--dot-light-soft) 0 2px, transparent 2.6px) !important;
   -webkit-mask-image:linear-gradient(to right,#000 58%,transparent 100%) !important;
   mask-image:linear-gradient(to right,#000 58%,transparent 100%) !important;
 }
@@ -35,11 +44,11 @@ body::before{
   height:220px;
   opacity:.62;
   background:
-    radial-gradient(circle at 24% 18%, rgba(255,249,243,.62) 0 4px, transparent 4.6px),
-    radial-gradient(circle at 66% 34%, rgba(233,120,50,.90) 0 8px, transparent 8.8px),
-    radial-gradient(circle at 42% 56%, rgba(233,120,50,.58) 0 3px, transparent 3.7px),
-    radial-gradient(circle at 70% 77%, rgba(255,249,243,.35) 0 2px, transparent 2.7px),
-    radial-gradient(circle at 29% 91%, rgba(233,120,50,.52) 0 5px, transparent 5.6px);
+    radial-gradient(circle at 24% 18%, var(--dot-light-strong) 0 4px, transparent 4.6px),
+    radial-gradient(circle at 66% 34%, var(--dot-main-strong) 0 8px, transparent 8.8px),
+    radial-gradient(circle at 42% 56%, var(--dot-main-soft) 0 3px, transparent 3.7px),
+    radial-gradient(circle at 70% 77%, var(--dot-light-soft) 0 2px, transparent 2.7px),
+    radial-gradient(circle at 29% 91%, var(--dot-main) 0 5px, transparent 5.6px);
   -webkit-mask-image:linear-gradient(to right,#000 55%,transparent 100%);
   mask-image:linear-gradient(to right,#000 55%,transparent 100%);
 }
@@ -51,34 +60,33 @@ body::before{
   height:300px;
   opacity:.72;
   background:
-    radial-gradient(circle at 74% 16%, rgba(233,120,50,.95) 0 9px, transparent 9.8px),
-    radial-gradient(circle at 31% 38%, rgba(255,249,243,.66) 0 3.5px, transparent 4.1px),
-    radial-gradient(circle at 63% 55%, rgba(233,120,50,.76) 0 5.5px, transparent 6.2px),
-    radial-gradient(circle at 26% 72%, rgba(255,249,243,.40) 0 2.5px, transparent 3px),
-    radial-gradient(circle at 78% 88%, rgba(233,120,50,.60) 0 4px, transparent 4.7px);
+    radial-gradient(circle at 74% 16%, var(--dot-main-strong) 0 9px, transparent 9.8px),
+    radial-gradient(circle at 31% 38%, var(--dot-light-strong) 0 3.5px, transparent 4.1px),
+    radial-gradient(circle at 63% 55%, var(--dot-main) 0 5.5px, transparent 6.2px),
+    radial-gradient(circle at 26% 72%, var(--dot-light) 0 2.5px, transparent 3px),
+    radial-gradient(circle at 78% 88%, var(--dot-main-soft) 0 4px, transparent 4.7px);
   -webkit-mask-image:linear-gradient(to left,#000 58%,transparent 100%);
   mask-image:linear-gradient(to left,#000 58%,transparent 100%);
 }
 
-/* Remove the old regular dot-grid blocks inside the intro page */
 .intro-content::after{
   width:90px !important;
   height:90px !important;
   background:
-    radial-gradient(circle at 19% 22%, rgba(233,120,50,.88) 0 3.5px, transparent 4px),
-    radial-gradient(circle at 65% 18%, rgba(255,249,243,.48) 0 2px, transparent 2.5px),
-    radial-gradient(circle at 76% 56%, rgba(233,120,50,.72) 0 5px, transparent 5.7px),
-    radial-gradient(circle at 31% 72%, rgba(255,249,243,.36) 0 2.5px, transparent 3px),
-    radial-gradient(circle at 58% 88%, rgba(233,120,50,.60) 0 3px, transparent 3.6px) !important;
+    radial-gradient(circle at 19% 22%, var(--dot-main-strong) 0 3.5px, transparent 4px),
+    radial-gradient(circle at 65% 18%, var(--dot-light) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 76% 56%, var(--dot-main) 0 5px, transparent 5.7px),
+    radial-gradient(circle at 31% 72%, var(--dot-light-soft) 0 2.5px, transparent 3px),
+    radial-gradient(circle at 58% 88%, var(--dot-main-soft) 0 3px, transparent 3.6px) !important;
   opacity:.62 !important;
 }
 
 .intro-hero::after{
   background:
-    radial-gradient(circle at 20% 26%, rgba(233,120,50,.90) 0 4px, transparent 4.6px),
-    radial-gradient(circle at 68% 20%, rgba(255,249,243,.50) 0 2.5px, transparent 3px),
-    radial-gradient(circle at 78% 61%, rgba(233,120,50,.75) 0 5px, transparent 5.7px),
-    radial-gradient(circle at 35% 78%, rgba(255,249,243,.34) 0 2px, transparent 2.6px) !important;
+    radial-gradient(circle at 20% 26%, var(--dot-main-strong) 0 4px, transparent 4.6px),
+    radial-gradient(circle at 68% 20%, var(--dot-light) 0 2.5px, transparent 3px),
+    radial-gradient(circle at 78% 61%, var(--dot-main) 0 5px, transparent 5.7px),
+    radial-gradient(circle at 35% 78%, var(--dot-light-soft) 0 2px, transparent 2.6px) !important;
   opacity:.52 !important;
 }
 
