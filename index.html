@@ -17,6 +17,55 @@
     margin:0 auto;
     padding:clamp(4rem,8vw,7rem) clamp(1rem,2.5vw,2rem) 6rem;
   }
+  .intro-hero{
+    position:relative;
+    max-width:1180px;
+    margin:0 0 clamp(7rem,12vw,11rem);
+    padding:clamp(1.5rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4.5rem);
+    border-bottom:1px solid rgba(255,249,243,.16);
+  }
+  .intro-hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:58px;
+    height:58px;
+    border-top:2px solid var(--accent);
+    border-left:2px solid var(--accent);
+  }
+  .intro-hero::after{
+    content:"";
+    position:absolute;
+    right:4%;
+    bottom:2rem;
+    width:92px;
+    height:92px;
+    background-image:radial-gradient(circle, rgba(233,120,50,.75) 1.6px, transparent 1.8px);
+    background-size:15px 15px;
+    opacity:.45;
+  }
+  .intro-kicker{
+    margin:0 0 1.2rem;
+    color:var(--accent);
+    font-size:clamp(.92rem,1.3vw,1.05rem);
+    letter-spacing:.18em;
+  }
+  .intro-hero-title{
+    position:relative;
+    z-index:1;
+    max-width:1050px;
+    margin:0;
+    font-family:var(--font-display);
+    font-size:clamp(3.4rem,7.5vw,7.4rem);
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-.025em;
+    color:var(--text-hi);
+  }
+  .intro-hero-title .accent-word{
+    color:var(--accent);
+  }
   .intro-block{
     margin-bottom:clamp(6.5rem,12vw,11rem);
   }
@@ -72,6 +121,24 @@
       padding-left:1rem;
       padding-right:1rem;
     }
+    .intro-hero{
+      margin-bottom:5.5rem;
+      padding-top:1.25rem;
+    }
+    .intro-hero::before{
+      width:38px;
+      height:38px;
+    }
+    .intro-hero::after{
+      width:58px;
+      height:58px;
+      right:0;
+      bottom:1.4rem;
+    }
+    .intro-hero-title{
+      font-size:clamp(2.8rem,13vw,4.5rem);
+      line-height:1.12;
+    }
     .intro-block{ margin-bottom:5.5rem; }
     .intro-heading{
       margin-bottom:2.3rem;
@@ -108,8 +175,13 @@
 </header>
 
 <main class="intro-report">
+  <section class="intro-hero" aria-labelledby="welcome-title">
+    <p class="intro-kicker">WELCOME TO MY WORLD</p>
+    <h1 class="intro-hero-title" id="welcome-title">歡迎來到<br><span class="accent-word">泱儒的娛樂世界</span></h1>
+  </section>
+
   <section class="intro-block">
-    <h1 class="intro-heading">作者介紹</h1>
+    <h2 class="intro-heading">作者介紹</h2>
     <div class="intro-content">
       <p>
         我是陳泱儒。這裡記錄我的繪畫作品、學習經歷與創作過程。我希望透過作品整理自己的觀察、想法與不同階段的嘗試，也讓每一次創作都成為學習歷程的一部分。
