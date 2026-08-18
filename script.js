@@ -24,11 +24,11 @@ const MEDIUM_ACCENT = {
 };
 
 const MEDIUM_ACCENT_RAW = {
-  all: "#B2673E",
-  traditional: "#B2673E",
-  illustration: "#C4437B",
-  digital: "#4C7CBA",
-  abstract: "#8CA83E",
+  all: "#E97832",
+  traditional: "#E97832",
+  illustration: "#E97832",
+  digital: "#E97832",
+  abstract: "#E97832",
 };
 
 function hexToRgba(hex, alpha){
