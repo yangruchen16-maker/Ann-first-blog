@@ -1,4 +1,4 @@
-/* ==========================================================================
+/* ========================================================================== 
    作品資料
    ========================================================================== */
 const ARTWORKS = [
@@ -39,7 +39,7 @@ function hexToRgba(hex, alpha){
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    作品集頁
    ========================================================================== */
 const galleryGrid = document.getElementById("galleryGrid");
@@ -82,10 +82,9 @@ function closeLightbox(){
 
 if(galleryGrid){
   galleryGrid.innerHTML = ARTWORKS.map((art, i) => {
-    const rot = (i % 2 === 0 ? -1 : 1) * (2 + (i % 3));
     return `
       <article class="art-card" data-medium="${art.medium}" data-id="${art.id}"
-        style="--rot:${rot}deg;--card-accent:${MEDIUM_ACCENT[art.medium]};animation-delay:${(i % 6) * 0.06}s"
+        style="--rot:0deg;--card-accent:${MEDIUM_ACCENT[art.medium]};animation-delay:${(i % 6) * 0.06}s"
         tabindex="0" role="button" aria-label="查看作品：${art.title}">
         <span class="pin"></span>
         <div class="art-thumb ph-visual ph-${art.medium}"></div>
@@ -137,7 +136,7 @@ if(lightbox){
   });
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    行動裝置導覽列
    ========================================================================== */
 const navToggle = document.getElementById("navToggle");
@@ -157,7 +156,7 @@ if(navToggle && mainNav){
   });
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    聯絡頁
    ========================================================================== */
 const contactForm = document.getElementById("contactForm");
@@ -189,7 +188,7 @@ if(contactForm){
   });
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    捲動進場動畫
    ========================================================================== */
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
