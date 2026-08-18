@@ -1,0 +1,96 @@
+/* Edge dot composition — layered, minimal, no corner arc */
+body::after{
+  display:none !important;
+}
+
+/* Left edge: denser cluster with a few oversized dots */
+body::before{
+  top:96px !important;
+  left:-34px !important;
+  width:190px !important;
+  height:250px !important;
+  opacity:.68 !important;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(233,120,50,.95) 0 7px, transparent 7.6px),
+    radial-gradient(circle at 58% 30%, rgba(255,249,243,.72) 0 3px, transparent 3.6px),
+    radial-gradient(circle at 76% 52%, rgba(233,120,50,.78) 0 5px, transparent 5.6px),
+    radial-gradient(circle at 38% 76%, rgba(255,249,243,.52) 0 2.5px, transparent 3px),
+    radial-gradient(circle, rgba(233,120,50,.52) 0 1.8px, transparent 2.2px) 0 0 / 18px 18px !important;
+  -webkit-mask-image:linear-gradient(to right,#000 58%,transparent 100%) !important;
+  mask-image:linear-gradient(to right,#000 58%,transparent 100%) !important;
+}
+
+/* Extra edge clusters, intentionally cropped by the viewport */
+.pinboard-texture::before,
+.pinboard-texture::after{
+  content:"";
+  position:fixed;
+  pointer-events:none;
+  z-index:0;
+}
+
+.pinboard-texture::before{
+  left:-28px;
+  top:48%;
+  width:130px;
+  height:210px;
+  opacity:.62;
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255,249,243,.62) 0 4px, transparent 4.6px),
+    radial-gradient(circle at 62% 38%, rgba(233,120,50,.88) 0 8px, transparent 8.7px),
+    radial-gradient(circle at 36% 66%, rgba(233,120,50,.60) 0 3px, transparent 3.6px),
+    radial-gradient(circle, rgba(255,249,243,.28) 0 1.5px, transparent 2px) 0 0 / 20px 20px;
+  -webkit-mask-image:linear-gradient(to right,#000 55%,transparent 100%);
+  mask-image:linear-gradient(to right,#000 55%,transparent 100%);
+}
+
+.pinboard-texture::after{
+  right:-34px;
+  top:30%;
+  width:160px;
+  height:300px;
+  opacity:.72;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(233,120,50,.95) 0 9px, transparent 9.8px),
+    radial-gradient(circle at 38% 42%, rgba(255,249,243,.66) 0 3.5px, transparent 4px),
+    radial-gradient(circle at 64% 68%, rgba(233,120,50,.78) 0 5.5px, transparent 6.2px),
+    radial-gradient(circle at 28% 84%, rgba(255,249,243,.42) 0 2.5px, transparent 3px),
+    radial-gradient(circle, rgba(233,120,50,.42) 0 1.7px, transparent 2.1px) 0 0 / 21px 21px;
+  -webkit-mask-image:linear-gradient(to left,#000 58%,transparent 100%);
+  mask-image:linear-gradient(to left,#000 58%,transparent 100%);
+}
+
+/* Local dot accents become slightly larger */
+.intro-content::after{
+  width:82px !important;
+  height:82px !important;
+  background-image:radial-gradient(circle, rgba(233,120,50,.82) 2.2px, transparent 2.7px) !important;
+  background-size:16px 16px !important;
+  opacity:.58 !important;
+}
+
+.intro-hero::after{
+  background-image:radial-gradient(circle, rgba(233,120,50,.82) 2.2px, transparent 2.8px) !important;
+  background-size:17px 17px !important;
+  opacity:.5 !important;
+}
+
+@media (max-width:720px){
+  body::before{
+    left:-30px !important;
+    width:125px !important;
+    height:180px !important;
+    opacity:.48 !important;
+  }
+  .pinboard-texture::before{
+    width:90px;
+    height:150px;
+    opacity:.42;
+  }
+  .pinboard-texture::after{
+    right:-30px;
+    width:105px;
+    height:210px;
+    opacity:.48;
+  }
+}
