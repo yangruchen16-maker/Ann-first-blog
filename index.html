@@ -3,30 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>你的名字 — 繪畫作品集</title>
-<meta name="description" content="橫跨寫實、插畫、數位藝術與抽象創作的個人繪畫作品集">
+<title>你的名字 — 個人介紹</title>
+<meta name="description" content="個人介紹、創作理念與經歷">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- 游標跟隨的畫筆點（裝飾） -->
-<div class="brush-cursor" aria-hidden="true"></div>
-
 <div class="pinboard-texture" aria-hidden="true"></div>
 
 <header class="site-header" id="top">
-  <a class="brand" href="#top">
+  <a class="brand" href="index.html">
     <span class="brand-mark">畫</span>
     <span class="brand-name">你的名字<span class="brand-dot">．</span>作品集</span>
   </a>
   <nav class="main-nav" aria-label="主導覽">
-    <a href="#gallery">作品</a>
-    <a href="#about">關於</a>
-    <a href="#process">創作筆記</a>
-    <a href="#contact">聯絡</a>
+    <a href="index.html" aria-current="page" style="color:var(--text-hi);border-bottom:1px solid var(--accent);">個人介紹</a>
+    <a href="portfolio.html">作品集</a>
+    <a href="contact.html">聯絡</a>
   </nav>
   <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -34,21 +29,19 @@
 </header>
 
 <main>
-
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="hero">
+  <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">個人繪畫作品集 — 2026</p>
+      <p class="eyebrow">PERSONAL INTRODUCTION — 2026</p>
       <h1 class="hero-title">
-        <span class="line">四種媒材，</span>
-        <span class="line line-em">同一雙眼睛。</span>
+        <span class="line">你好，</span>
+        <span class="line line-em">這裡是我的創作世界。</span>
       </h1>
       <p class="hero-desc">
-        我在寫實、插畫、數位與抽象之間來回工作——它們是同一種觀看方式，換了四套工具。以下是這段時間累積下來的畫布、螢幕與草稿本。
+        這一頁專門介紹我是誰、我正在學什麼，以及我如何看待創作。作品本身則獨立收錄在作品集頁面，讓每個主題都有自己的空間。
       </p>
       <div class="hero-actions">
-        <a href="#gallery" class="btn btn-primary">瀏覽作品</a>
-        <a href="#about" class="btn btn-ghost">關於創作者</a>
+        <a href="portfolio.html" class="btn btn-primary">前往作品集</a>
+        <a href="contact.html" class="btn btn-ghost">聯絡我</a>
       </div>
     </div>
 
@@ -56,171 +49,72 @@
       <div class="pin-card card-traditional r1">
         <span class="pin"></span>
         <div class="ph-visual ph-traditional"></div>
-        <span class="pin-tag">寫實</span>
+        <span class="pin-tag">觀察</span>
       </div>
       <div class="pin-card card-illustration r2">
         <span class="pin"></span>
         <div class="ph-visual ph-illustration"></div>
-        <span class="pin-tag">插畫</span>
+        <span class="pin-tag">想像</span>
       </div>
       <div class="pin-card card-digital r3">
         <span class="pin"></span>
         <div class="ph-visual ph-digital"></div>
-        <span class="pin-tag">數位</span>
+        <span class="pin-tag">實驗</span>
       </div>
       <div class="pin-card card-abstract r4">
         <span class="pin"></span>
         <div class="ph-visual ph-abstract"></div>
-        <span class="pin-tag">抽象</span>
+        <span class="pin-tag">創作</span>
       </div>
     </div>
   </section>
 
-  <!-- ================= MEDIUM SWITCHER + GALLERY ================= -->
-  <section class="gallery-section" id="gallery">
-    <div class="section-head">
-      <p class="eyebrow">01 — 作品牆</p>
-      <h2>選一種顏料，換一種心情</h2>
-      <p class="section-desc">每種媒材都有自己的調性；點選下方標籤，畫廊牆會跟著換色。</p>
-    </div>
-
-    <div class="medium-switcher" id="mediumSwitcher" role="tablist" aria-label="依媒材篩選作品">
-      <button class="medium-tab is-active" data-medium="all" role="tab" aria-selected="true">
-        <span class="tab-index">00</span><span class="tab-label">全部</span>
-      </button>
-      <button class="medium-tab" data-medium="traditional" role="tab" aria-selected="false">
-        <span class="tab-index">01</span><span class="tab-label">寫實 / 傳統</span>
-      </button>
-      <button class="medium-tab" data-medium="illustration" role="tab" aria-selected="false">
-        <span class="tab-index">02</span><span class="tab-label">插畫 / 角色</span>
-      </button>
-      <button class="medium-tab" data-medium="digital" role="tab" aria-selected="false">
-        <span class="tab-index">03</span><span class="tab-label">數位 / 概念</span>
-      </button>
-      <button class="medium-tab" data-medium="abstract" role="tab" aria-selected="false">
-        <span class="tab-index">04</span><span class="tab-label">抽象 / 實驗</span>
-      </button>
-    </div>
-
-    <div class="gallery-grid" id="galleryGrid"><!-- JS 產生作品卡片 --></div>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="about-section" id="about">
+  <section class="about-section">
     <div class="about-visual" aria-hidden="true">
       <div class="about-frame">
         <div class="ph-visual ph-portrait"></div>
       </div>
     </div>
     <div class="about-content">
-      <p class="eyebrow">02 — 關於</p>
-      <h2>我如何看待「風格」這件事</h2>
+      <p class="eyebrow">01 — 關於我</p>
+      <h2>個人介紹</h2>
       <p>
-        我不太相信一個創作者只能有一種筆觸。寫實訓練了我的眼睛，插畫給了我說故事的語言，數位工具讓我能快速試錯，抽象則是我丟開規則、單純處理色彩與重量的地方。它們互相餵養彼此。
+        在這裡放入你的個人背景，例如目前的學習階段、興趣、擅長的媒材，以及開始創作的原因。這一頁的重點是讓第一次來到網站的人快速認識你。
       </p>
       <p>
-        這個作品集收錄了近期比較能代表這四條路線的作品。點進任何一張，都能看到創作年份、使用媒材與簡短的創作脈絡。
+        也可以補上你的創作理念、近期目標，或對未來想探索方向的描述。之後只要替換文字與照片，就能把這個版型變成真正屬於你的個人頁面。
       </p>
       <ul class="about-stats">
-        <li><span class="stat-num">120<span class="stat-plus">+</span></span><span class="stat-label">已完成作品</span></li>
-        <li><span class="stat-num">4</span><span class="stat-label">主要媒材</span></li>
-        <li><span class="stat-num">6</span><span class="stat-label">年創作經驗</span></li>
+        <li><span class="stat-num">01</span><span class="stat-label">個人介紹</span></li>
+        <li><span class="stat-num">02</span><span class="stat-label">作品展示</span></li>
+        <li><span class="stat-num">03</span><span class="stat-label">聯絡方式</span></li>
       </ul>
-      <a href="#contact" class="btn btn-primary">委託合作洽談</a>
+      <a href="portfolio.html" class="btn btn-primary">看我的作品</a>
     </div>
   </section>
 
-  <!-- ================= PROCESS ================= -->
-  <section class="process-section" id="process">
+  <section class="process-section">
     <div class="section-head">
-      <p class="eyebrow">03 — 創作筆記</p>
-      <h2>從草稿到完成</h2>
+      <p class="eyebrow">02 — MY STORY</p>
+      <h2>我的創作路線</h2>
+      <p class="section-desc">這裡可以依你的真實經歷，改成學習歷程、重要事件或創作階段。</p>
     </div>
     <ol class="process-steps">
-      <li class="process-step">
-        <span class="step-index">01</span>
-        <h3>觀察與蒐集</h3>
-        <p>不論媒材，都從隨手速寫與參考蒐集開始——光線、姿態、質感先在筆記本裡練過一輪。</p>
-      </li>
-      <li class="process-step">
-        <span class="step-index">02</span>
-        <h3>構圖實驗</h3>
-        <p>用縮圖快速比較幾種構圖，這一步刻意畫得很醜，重點是關係，不是細節。</p>
-      </li>
-      <li class="process-step">
-        <span class="step-index">03</span>
-        <h3>媒材決定調性</h3>
-        <p>同一個主題，換一種媒材就會走向完全不同的情緒——這也是我刻意保留四條路線的原因。</p>
-      </li>
-      <li class="process-step">
-        <span class="step-index">04</span>
-        <h3>收尾與留白</h3>
-        <p>最後一步常常是「少畫一點」：留白、降低對比，讓畫面有呼吸的空間。</p>
-      </li>
+      <li class="process-step"><span class="step-index">01</span><h3>開始</h3><p>寫下你第一次開始創作、畫畫或接觸設計的契機。</p></li>
+      <li class="process-step"><span class="step-index">02</span><h3>探索</h3><p>記錄你嘗試過的媒材、風格與不同的練習方式。</p></li>
+      <li class="process-step"><span class="step-index">03</span><h3>累積</h3><p>把重要作品、比賽、課程或個人專案整理成自己的軌跡。</p></li>
+      <li class="process-step"><span class="step-index">04</span><h3>下一步</h3><p>說明接下來希望挑戰的方向，讓網站也成為持續更新的學習紀錄。</p></li>
     </ol>
   </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="contact-section" id="contact">
-    <div class="contact-inner">
-      <p class="eyebrow">04 — 聯絡</p>
-      <h2>想合作，或單純想聊聊創作？</h2>
-      <p class="section-desc">委託、展覽邀約、媒材交流都歡迎，留下訊息，我會盡快回覆。</p>
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="form-row">
-          <label for="name">姓名</label>
-          <input type="text" id="name" name="name" required placeholder="怎麼稱呼你">
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com">
-        </div>
-        <div class="form-row">
-          <label for="subject">主旨</label>
-          <select id="subject" name="subject">
-            <option value="commission">委託創作</option>
-            <option value="exhibition">展覽 / 合作邀約</option>
-            <option value="other">其他</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="message">訊息內容</label>
-          <textarea id="message" name="message" rows="5" required placeholder="想聊聊什麼呢？"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-wide">送出訊息</button>
-        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-footer">
   <p>© 2026 你的名字．保留所有權利</p>
   <div class="footer-links">
-    <a href="#" aria-label="Instagram">Instagram</a>
-    <a href="#" aria-label="Behance">Behance</a>
-    <a href="#" aria-label="Email">Email</a>
+    <a href="portfolio.html">作品集</a>
+    <a href="contact.html">聯絡</a>
   </div>
 </footer>
-
-<!-- ================= LIGHTBOX ================= -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-backdrop" data-close></div>
-  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
-    <button class="lightbox-close" data-close aria-label="關閉">✕</button>
-    <div class="lightbox-visual" id="lightboxVisual"></div>
-    <div class="lightbox-info">
-      <span class="lightbox-tag" id="lightboxTag"></span>
-      <h3 id="lightboxTitle"></h3>
-      <p id="lightboxDesc"></p>
-      <dl class="lightbox-meta">
-        <div><dt>媒材</dt><dd id="lightboxMedium"></dd></div>
-        <div><dt>年份</dt><dd id="lightboxYear"></dd></div>
-      </dl>
-    </div>
-  </div>
-</div>
 
 <script src="script.js"></script>
 </body>
