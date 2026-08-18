@@ -224,7 +224,7 @@ if(contactForm){
       other: "其他洽詢"
     };
 
-    const mailto = `mailto:you@example.com?subject=${encodeURIComponent("[作品集聯絡] " + subjectMap[subject])}&body=${encodeURIComponent(`姓名：${name}\nEmail：${email}\n\n${message}`)}`;
+    const mailto = `mailto:myherbstudio@gmail.com?subject=${encodeURIComponent("[作品集聯絡] " + subjectMap[subject])}&body=${encodeURIComponent(`姓名：${name}\nEmail：${email}\n\n${message}`)}`;
     window.location.href = mailto;
     if(formNote) formNote.textContent = "已為你開啟郵件軟體，確認後送出即可。";
   });
