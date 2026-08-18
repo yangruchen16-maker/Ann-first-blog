@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>陳泱儒 — 個人介紹</title>
-<meta name="description" content="陳泱儒的個人介紹、個人經歷與繪畫過程">
+<meta name="description" content="陳泱儒的作者介紹、個人經歷與繪畫過程">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -18,11 +18,11 @@
     padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem) 6rem;
   }
   .intro-block{
-    margin-bottom:clamp(6rem,11vw,10rem);
+    margin-bottom:clamp(6.5rem,12vw,11rem);
   }
   .intro-block:last-child{ margin-bottom:2rem; }
   .intro-heading{
-    margin:0 0 clamp(2.8rem,5vw,4.5rem);
+    margin:0 0 clamp(3rem,5vw,4.8rem);
     font-family:var(--font-body);
     font-size:clamp(1.65rem,2.7vw,2.35rem);
     font-weight:600;
@@ -31,54 +31,48 @@
     color:var(--text-hi);
   }
   .intro-content{
-    margin-left:clamp(2rem,7vw,6rem);
-    max-width:950px;
+    margin-left:clamp(2.2rem,7vw,6.2rem);
+    max-width:960px;
   }
   .intro-content p{
-    max-width:860px;
+    max-width:900px;
     color:var(--text-lo);
     font-size:clamp(1rem,1.5vw,1.18rem);
-    line-height:2;
-    margin:0 0 1.6rem;
+    line-height:2.15;
+    letter-spacing:.015em;
+    margin:0 0 2rem;
+  }
+  .report-subheading{
+    margin:0 0 clamp(2.6rem,4vw,3.8rem);
+    font-family:var(--font-body);
+    font-size:clamp(1.25rem,2vw,1.7rem);
+    font-weight:600;
+    line-height:1.35;
+    color:var(--text-hi);
+  }
+  .report-paragraphs{
+    max-width:920px;
+  }
+  .report-paragraphs p{
+    text-align:left;
+    margin-bottom:2.1rem;
   }
   .intro-main-image{
     display:block;
     width:100%;
     max-width:900px;
     height:auto;
-    margin-top:2.4rem;
+    margin-top:2.8rem;
     border-radius:4px;
     box-shadow:0 20px 50px -18px rgba(0,0,0,.55);
   }
-  .experience-list,
-  .drawing-list{
-    display:grid;
-    gap:2rem;
-    max-width:860px;
-  }
-  .experience-item,
-  .drawing-item{
-    padding-top:1rem;
-    border-top:1px solid rgba(245,240,228,.14);
-  }
-  .experience-item h3,
-  .drawing-item h3{
-    margin:0 0 .55rem;
-    font-family:var(--font-body);
-    font-size:1.05rem;
-    font-weight:600;
-  }
-  .experience-item p,
-  .drawing-item p{ margin:0; }
-  .drawing-list{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
   @media (max-width:720px){
     .intro-report{ padding-top:3rem; }
-    .intro-block{ margin-bottom:5rem; }
-    .intro-heading{ margin-bottom:2rem; }
-    .intro-content{ margin-left:1.2rem; }
-    .drawing-list{ grid-template-columns:1fr; }
+    .intro-block{ margin-bottom:5.5rem; }
+    .intro-heading{ margin-bottom:2.3rem; }
+    .intro-content{ margin-left:1.1rem; }
+    .report-subheading{ margin-bottom:2rem; }
+    .intro-content p{ line-height:1.95; }
   }
 </style>
 </head>
@@ -102,10 +96,10 @@
 
 <main class="intro-report">
   <section class="intro-block">
-    <h1 class="intro-heading">陳泱儒</h1>
+    <h1 class="intro-heading">作者介紹</h1>
     <div class="intro-content">
       <p>
-        這裡是我的個人介紹與創作紀錄。我用作品整理自己的觀察、學習與想法，也把不同階段的嘗試保留下來。
+        我是陳泱儒。這裡記錄我的繪畫作品、學習經歷與創作過程。我希望透過作品整理自己的觀察、想法與不同階段的嘗試，也讓每一次創作都成為學習歷程的一部分。
       </p>
       <img class="intro-main-image" src="assets/intro-image.svg" alt="陳泱儒個人介紹主視覺">
     </div>
@@ -114,19 +108,17 @@
   <section class="intro-block">
     <h2 class="intro-heading">個人經歷</h2>
     <div class="intro-content">
-      <div class="experience-list">
-        <div class="experience-item">
-          <h3>學習與探索</h3>
-          <p>持續接觸不同的創作方式，從觀察、練習到完成作品，逐步整理出自己的方向。</p>
-        </div>
-        <div class="experience-item">
-          <h3>作品累積</h3>
-          <p>透過繪畫與個人專案記錄不同階段的想法，讓作品不只是成果，也成為學習過程的一部分。</p>
-        </div>
-        <div class="experience-item">
-          <h3>持續前進</h3>
-          <p>希望繼續嘗試不同媒材、構圖與表現方式，並將新的作品陸續更新到作品集。</p>
-        </div>
+      <h3 class="report-subheading">學習與探索</h3>
+      <div class="report-paragraphs">
+        <p>
+          我持續接觸不同的創作方式，從日常觀察、參考資料蒐集到實際練習，逐步認識構圖、比例、光影與色彩之間的關係。不同階段的作品也保留了當時的想法與技術變化。
+        </p>
+        <p>
+          在創作過程中，我不只把完成一張畫當作目標，也會回頭整理哪些地方成功、哪些地方需要重新調整。透過反覆比較與修正，慢慢建立自己的判斷方式，並嘗試找到更適合自己的表現方向。
+        </p>
+        <p>
+          未來希望繼續接觸更多媒材、題材與繪畫方法，讓作品集不只是展示完成品，也能清楚記錄自己的學習軌跡與成長。
+        </p>
       </div>
     </div>
   </section>
@@ -134,23 +126,17 @@
   <section class="intro-block">
     <h2 class="intro-heading">繪畫過程</h2>
     <div class="intro-content">
-      <div class="drawing-list">
-        <div class="drawing-item">
-          <h3>觀察</h3>
-          <p>先整理主題、姿態、光線與想表達的情緒，蒐集需要的參考資料。</p>
-        </div>
-        <div class="drawing-item">
-          <h3>草稿</h3>
-          <p>用簡單線條確認構圖與比例，反覆調整畫面中各元素的位置。</p>
-        </div>
-        <div class="drawing-item">
-          <h3>塑造</h3>
-          <p>逐步加入明暗、色彩與細節，讓畫面的主體與空間關係更完整。</p>
-        </div>
-        <div class="drawing-item">
-          <h3>完成</h3>
-          <p>最後檢查整體視覺重心、細節與留白，完成作品並整理創作紀錄。</p>
-        </div>
+      <h3 class="report-subheading">從構想到完成</h3>
+      <div class="report-paragraphs">
+        <p>
+          開始一張作品前，我會先確認想表達的主題與情緒，再蒐集姿態、光線、服裝、場景或色彩相關的參考資料。這個階段的重點不是立刻畫細節，而是先決定整張作品最重要的視覺方向。
+        </p>
+        <p>
+          接著會用較簡單的線條建立草稿，確認人物比例、畫面重心與各元素的位置。構圖穩定後，再逐步加入明暗、色彩與細節，過程中持續調整主體和背景之間的關係，避免畫面失去焦點。
+        </p>
+        <p>
+          完成前，我會重新檢查整體比例、光影、色彩與留白，並比較作品是否仍符合一開始設定的主題。最後的修正通常不是增加更多細節，而是刪除不必要的資訊，讓畫面更完整、清楚。
+        </p>
       </div>
     </div>
   </section>
