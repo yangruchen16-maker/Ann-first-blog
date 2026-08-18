@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你的名字 — 作品集</title>
+<meta name="description" content="個人繪畫作品集，依媒材分類瀏覽作品">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="pinboard-texture" aria-hidden="true"></div>
+
+<header class="site-header" id="top">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">畫</span>
+    <span class="brand-name">你的名字<span class="brand-dot">．</span>作品集</span>
+  </a>
+  <nav class="main-nav" aria-label="主導覽">
+    <a href="index.html">個人介紹</a>
+    <a href="portfolio.html" aria-current="page" style="color:var(--text-hi);border-bottom:1px solid var(--accent);">作品集</a>
+    <a href="contact.html">聯絡</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+  <section class="gallery-section" id="gallery">
+    <div class="section-head">
+      <p class="eyebrow">PORTFOLIO — 2026</p>
+      <h1 class="hero-title" style="font-size:clamp(2.4rem,5vw,4rem);margin-bottom:1rem;">
+        <span class="line">作品集</span>
+        <span class="line line-em">每一張作品都有自己的故事。</span>
+      </h1>
+      <p class="section-desc">依照媒材分類瀏覽作品。點選作品卡片，可以查看作品名稱、年份、媒材與創作說明。</p>
+    </div>
+
+    <div class="medium-switcher" id="mediumSwitcher" role="tablist" aria-label="依媒材篩選作品">
+      <button class="medium-tab is-active" data-medium="all" role="tab" aria-selected="true">
+        <span class="tab-index">00</span><span class="tab-label">全部</span>
+      </button>
+      <button class="medium-tab" data-medium="traditional" role="tab" aria-selected="false">
+        <span class="tab-index">01</span><span class="tab-label">寫實 / 傳統</span>
+      </button>
+      <button class="medium-tab" data-medium="illustration" role="tab" aria-selected="false">
+        <span class="tab-index">02</span><span class="tab-label">插畫 / 角色</span>
+      </button>
+      <button class="medium-tab" data-medium="digital" role="tab" aria-selected="false">
+        <span class="tab-index">03</span><span class="tab-label">數位 / 概念</span>
+      </button>
+      <button class="medium-tab" data-medium="abstract" role="tab" aria-selected="false">
+        <span class="tab-index">04</span><span class="tab-label">抽象 / 實驗</span>
+      </button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 你的名字．保留所有權利</p>
+  <div class="footer-links">
+    <a href="index.html">個人介紹</a>
+    <a href="contact.html">聯絡</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-close></div>
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <button class="lightbox-close" data-close aria-label="關閉">✕</button>
+    <div class="lightbox-visual" id="lightboxVisual"></div>
+    <div class="lightbox-info">
+      <span class="lightbox-tag" id="lightboxTag"></span>
+      <h3 id="lightboxTitle"></h3>
+      <p id="lightboxDesc"></p>
+      <dl class="lightbox-meta">
+        <div><dt>媒材</dt><dd id="lightboxMedium"></dd></div>
+        <div><dt>年份</dt><dd id="lightboxYear"></dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
