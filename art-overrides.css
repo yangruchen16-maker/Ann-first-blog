@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
+
 /* Organic edge dots — irregular, layered, no square grids */
 :root{
   --dot-main-strong: rgba(233,120,50,.95);
@@ -6,6 +8,22 @@
   --dot-light-strong: rgba(255,249,243,.70);
   --dot-light: rgba(255,249,243,.48);
   --dot-light-soft: rgba(255,249,243,.34);
+}
+
+/* 全站中文統一使用思源黑體 */
+html,
+body,
+body *{
+  font-family:"Noto Sans TC","Source Han Sans TC","PingFang TC",sans-serif !important;
+}
+
+/* 品牌英文與首頁英文大標題保留 Aldhabi */
+.brand-logo,
+.brand-logo *,
+.footer-logo,
+.intro-hero-title,
+.intro-hero-title *{
+  font-family:"Aldhabi","Times New Roman",serif !important;
 }
 
 body::after{
