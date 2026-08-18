@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你的名字 — 聯絡</title>
+<meta name="description" content="委託、合作與創作交流聯絡頁">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="pinboard-texture" aria-hidden="true"></div>
+
+<header class="site-header" id="top">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">畫</span>
+    <span class="brand-name">你的名字<span class="brand-dot">．</span>作品集</span>
+  </a>
+  <nav class="main-nav" aria-label="主導覽">
+    <a href="index.html">個人介紹</a>
+    <a href="portfolio.html">作品集</a>
+    <a href="contact.html" aria-current="page" style="color:var(--text-hi);border-bottom:1px solid var(--accent);">聯絡</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <p class="eyebrow">CONTACT — 2026</p>
+      <h1 class="hero-title" style="font-size:clamp(2.4rem,5vw,4rem);margin-bottom:1rem;">
+        <span class="line">聯絡</span>
+        <span class="line line-em">讓想法從這裡開始。</span>
+      </h1>
+      <p class="section-desc">委託創作、合作邀約或單純想交流作品，都可以從這一頁聯絡我。</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="name">姓名</label>
+          <input type="text" id="name" name="name" required placeholder="怎麼稱呼你">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="subject">主旨</label>
+          <select id="subject" name="subject">
+            <option value="commission">委託創作</option>
+            <option value="exhibition">展覽 / 合作邀約</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">訊息內容</label>
+          <textarea id="message" name="message" rows="7" required placeholder="想聊聊什麼呢？"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-wide">送出訊息</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 你的名字．保留所有權利</p>
+  <div class="footer-links">
+    <a href="index.html">個人介紹</a>
+    <a href="portfolio.html">作品集</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
