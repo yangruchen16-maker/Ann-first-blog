@@ -7,6 +7,40 @@ artOverrideStylesheet.href = "art-overrides.css";
 document.head.appendChild(artOverrideStylesheet);
 
 /* ========================================================================== 
+   每次開啟網站，隨機切換圓點配色
+   ========================================================================== */
+(() => {
+  const DOT_PALETTES = [
+    { main: "#E97832", light: "#FFF9F3" },
+    { main: "#F2C14E", light: "#FFF8E7" },
+    { main: "#D95D39", light: "#FCE9DF" },
+    { main: "#91B493", light: "#F4F7EE" },
+    { main: "#7FA7C9", light: "#EEF5FA" },
+    { main: "#C889B8", light: "#FFF0FA" },
+    { main: "#B59A68", light: "#FFF8ED" },
+    { main: "#8D83C7", light: "#F4F0FF" }
+  ];
+
+  const palette = DOT_PALETTES[Math.floor(Math.random() * DOT_PALETTES.length)];
+
+  const toRgba = (hex, alpha) => {
+    const h = hex.replace("#", "");
+    const r = parseInt(h.slice(0, 2), 16);
+    const g = parseInt(h.slice(2, 4), 16);
+    const b = parseInt(h.slice(4, 6), 16);
+    return `rgba(${r},${g},${b},${alpha})`;
+  };
+
+  const rootStyle = document.documentElement.style;
+  rootStyle.setProperty("--dot-main-strong", toRgba(palette.main, .95));
+  rootStyle.setProperty("--dot-main", toRgba(palette.main, .78));
+  rootStyle.setProperty("--dot-main-soft", toRgba(palette.main, .58));
+  rootStyle.setProperty("--dot-light-strong", toRgba(palette.light, .70));
+  rootStyle.setProperty("--dot-light", toRgba(palette.light, .48));
+  rootStyle.setProperty("--dot-light-soft", toRgba(palette.light, .34));
+})();
+
+/* ========================================================================== 
    作品資料
    ========================================================================== */
 const ARTWORKS = [
