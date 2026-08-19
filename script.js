@@ -7,6 +7,18 @@ artOverrideStylesheet.href = "art-overrides.css";
 document.head.appendChild(artOverrideStylesheet);
 
 /* ========================================================================== 
+   全站頁尾聯絡資訊
+   ========================================================================== */
+const footerContact = document.querySelector(".footer-contact");
+if(footerContact){
+  footerContact.innerHTML = `
+    <span class="footer-contact-label">CONTACT</span>
+    <a href="tel:0909990124">聯絡電話：0909990124</a>
+    <a href="mailto:yangruchen16@gmail.com">Email: yangruchen16@gmail.com</a>
+  `;
+}
+
+/* ========================================================================== 
    每次開啟網站，隨機切換圓點配色
    ========================================================================== */
 (() => {
