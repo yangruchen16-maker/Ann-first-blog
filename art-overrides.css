@@ -129,13 +129,18 @@ body::before{
 
 /* Footer contact block */
 .site-footer-contact{
-  align-items:flex-end;
+  align-items:flex-start;
+  justify-content:flex-start;
+  flex-direction:column;
   padding-top:2.3rem;
+  text-align:left;
 }
 .footer-identity{
   display:flex;
   flex-direction:column;
+  align-items:flex-start;
   gap:.3rem;
+  text-align:left;
 }
 .footer-logo{
   color:var(--text-hi);
@@ -146,8 +151,10 @@ body::before{
 .footer-contact{
   display:flex;
   flex-direction:column;
-  align-items:flex-end;
-  gap:.2rem;
+  align-items:flex-start;
+  gap:.28rem;
+  margin-top:.9rem;
+  text-align:left;
 }
 .footer-contact-label{
   color:var(--accent);
@@ -158,6 +165,7 @@ body::before{
 .footer-contact a{
   color:var(--text-hi);
   font-size:.94rem;
+  text-align:left;
 }
 .footer-contact a:hover{ color:var(--accent); }
 
@@ -180,9 +188,4 @@ body::before{
     opacity:.48;
   }
   .brand-logo{ font-size:1.72rem; }
-  .site-footer-contact{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-  .footer-contact{ align-items:flex-start; }
 }
