@@ -108,6 +108,18 @@ body::before{
   opacity:.52 !important;
 }
 
+/* 個人介紹主圖：由 900px 縮小 1.5 倍至 600px */
+.IMG-main-5422{
+  display:block;
+  width:100%;
+  max-width:600px;
+  height:auto;
+  margin-top:3rem;
+  margin-left:0;
+  border-radius:4px;
+  box-shadow:0 20px 50px -18px rgba(0,0,0,.55);
+}
+
 /* Header logo */
 .brand-logo{
   display:inline-flex;
@@ -188,4 +200,7 @@ body::before{
     opacity:.48;
   }
   .brand-logo{ font-size:1.72rem; }
+  .IMG-main-5422{
+    max-width:100%;
+  }
 }
