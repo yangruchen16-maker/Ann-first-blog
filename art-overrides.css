@@ -108,6 +108,29 @@ body::before{
   opacity:.52 !important;
 }
 
+/* 換頁後，裝飾圖案依序柔和漸顯 */
+@keyframes artPatternFadeIn{
+  from{ filter:opacity(0); }
+  to{ filter:opacity(1); }
+}
+
+.pinboard-texture{
+  filter:opacity(0);
+  animation:artPatternFadeIn .8s ease .05s forwards;
+}
+body::before{
+  filter:opacity(0);
+  animation:artPatternFadeIn .9s ease .16s forwards;
+}
+.intro-hero::after{
+  filter:opacity(0);
+  animation:artPatternFadeIn .85s ease .28s forwards;
+}
+.intro-content::after{
+  filter:opacity(0);
+  animation:artPatternFadeIn .85s ease .4s forwards;
+}
+
 /* 個人介紹主圖：由 900px 縮小 1.5 倍至 600px */
 .IMG-main-5422{
   display:block;
@@ -180,6 +203,16 @@ body::before{
   text-align:left;
 }
 .footer-contact a:hover{ color:var(--accent); }
+
+@media (prefers-reduced-motion: reduce){
+  .pinboard-texture,
+  body::before,
+  .intro-hero::after,
+  .intro-content::after{
+    filter:none;
+    animation:none;
+  }
+}
 
 @media (max-width:720px){
   body::before{
