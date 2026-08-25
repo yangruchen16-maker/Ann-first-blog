@@ -19,6 +19,60 @@ if(footerContact){
 }
 
 /* ========================================================================== 
+   個人生活網站導覽與首頁定位
+   ========================================================================== */
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const siteNav = document.querySelector(".main-nav");
+
+if(siteNav && !siteNav.querySelector('a[href="travel.html"]')){
+  const travelLink = document.createElement("a");
+  travelLink.href = "travel.html";
+  travelLink.textContent = "出國旅行";
+  const contactLink = siteNav.querySelector('a[href="contact.html"]');
+  if(contactLink) siteNav.insertBefore(travelLink, contactLink);
+  else siteNav.appendChild(travelLink);
+}
+
+if(siteNav){
+  siteNav.querySelectorAll("a").forEach(link => {
+    const href = link.getAttribute("href");
+    if(href === currentPage || (currentPage === "" && href === "index.html")){
+      link.setAttribute("aria-current", "page");
+      link.style.color = "var(--text-hi)";
+      link.style.borderBottom = "1px solid var(--accent)";
+    }
+  });
+}
+
+if(currentPage === "index.html" || currentPage === ""){
+  document.title = "Ann ULXJ | 個人生活";
+  const description = document.querySelector('meta[name="description"]');
+  if(description) description.setAttribute("content", "Ann ULXJ 的生活、學習、旅行與創作紀錄");
+
+  const introBlocks = document.querySelectorAll(".intro-block");
+  if(introBlocks[0]){
+    const heading = introBlocks[0].querySelector(".intro-heading");
+    const paragraph = introBlocks[0].querySelector(".intro-content p");
+    if(heading) heading.textContent = "關於我";
+    if(paragraph) paragraph.textContent = "我是陳泱儒。這裡記錄我的生活、學習、旅行與創作，把不同階段遇見的人事物、想法與嘗試整理成自己的生活軌跡。";
+  }
+
+  if(introBlocks[2]){
+    const heading = introBlocks[2].querySelector(".intro-heading");
+    const paragraphs = introBlocks[2].querySelectorAll(".report-paragraphs p");
+    if(heading) heading.textContent = "生活紀錄";
+    const lifeCopy = [
+      "我會把日常裡值得留下的片段記錄下來，可能是一段學習、一個新的想法、一場旅行，或某個讓我重新看待事情的瞬間。",
+      "除了創作，我也想把這個網站當成自己的生活資料庫。照片、文字與心得不一定要很正式，但希望多年後回頭看時，仍能知道當時的自己正在想什麼。",
+      "這個網站會隨著生活持續更新。作品、旅行與日常不再分開，而是一起構成我不同階段的紀錄。"
+    ];
+    paragraphs.forEach((p,index) => {
+      if(lifeCopy[index]) p.textContent = lifeCopy[index];
+    });
+  }
+}
+
+/* ========================================================================== 
    每次開啟網站，隨機切換圓點配色
    ========================================================================== */
 (() => {
@@ -67,14 +121,14 @@ const ARTWORKS = [
   { id:9, medium:"digital", mediumLabel:"數位繪圖", title:"介面之下", year:"2026", desc:"以網格與掃描線意象表現「介面之下」的資料流動感。" },
   { id:10, medium:"abstract", mediumLabel:"壓克力．畫布", title:"破碎的呼吸", year:"2024", desc:"用大面積刮刀處理與細筆勾線的對比，記錄一段焦慮情緒的視覺化過程。" },
   { id:11, medium:"abstract", mediumLabel:"混合媒材", title:"重量與留白", year:"2025", desc:"實驗紙張拼貼與墨色渲染，思考畫面中「留白」也是一種重量。" },
-  { id:12, medium:"abstract", mediumLabel:"壓克力．畫布", title:"殘響", year:"2026", desc:"以重複的筆觸節奏模擬聲音殘響消散的過程，色彩由濃轉淡。" },
+  { id:12, medium:"abstract", mediumLabel:"壓克力．畫布", title:"殘響", year:"2026", desc:"以重複的筆觸節奏模擬聲音殘響消散的過程，色彩由濃轉淡。" }
 ];
 
 const MEDIUM_ACCENT = {
   traditional: "var(--c-traditional)",
   illustration: "var(--c-illustration)",
   digital: "var(--c-digital)",
-  abstract: "var(--c-abstract)",
+  abstract: "var(--c-abstract)"
 };
 
 const MEDIUM_ACCENT_RAW = {
@@ -82,7 +136,7 @@ const MEDIUM_ACCENT_RAW = {
   traditional: "#E97832",
   illustration: "#E97832",
   digital: "#E97832",
-  abstract: "#E97832",
+  abstract: "#E97832"
 };
 
 function hexToRgba(hex, alpha){
@@ -135,19 +189,17 @@ function closeLightbox(){
 }
 
 if(galleryGrid){
-  galleryGrid.innerHTML = ARTWORKS.map((art, i) => {
-    return `
-      <article class="art-card" data-medium="${art.medium}" data-id="${art.id}"
-        style="--rot:0deg;--card-accent:${MEDIUM_ACCENT[art.medium]};animation-delay:${(i % 6) * 0.06}s"
-        tabindex="0" role="button" aria-label="查看作品：${art.title}">
-        <span class="pin"></span>
-        <div class="art-thumb ph-visual ph-${art.medium}"></div>
-        <div class="art-meta">
-          <p class="art-medium">${art.mediumLabel} ／ ${art.year}</p>
-          <h3 class="art-title">${art.title}</h3>
-        </div>
-      </article>`;
-  }).join("");
+  galleryGrid.innerHTML = ARTWORKS.map((art, i) => `
+    <article class="art-card" data-medium="${art.medium}" data-id="${art.id}"
+      style="--rot:0deg;--card-accent:${MEDIUM_ACCENT[art.medium]};animation-delay:${(i % 6) * 0.06}s"
+      tabindex="0" role="button" aria-label="查看作品：${art.title}">
+      <span class="pin"></span>
+      <div class="art-thumb ph-visual ph-${art.medium}"></div>
+      <div class="art-meta">
+        <p class="art-medium">${art.mediumLabel} ／ ${art.year}</p>
+        <h3 class="art-title">${art.title}</h3>
+      </div>
+    </article>`).join("");
 
   document.querySelectorAll(".art-card").forEach(card => {
     const open = () => openLightbox(Number(card.dataset.id));
@@ -236,7 +288,7 @@ if(contactForm){
       other: "其他洽詢"
     };
 
-    const mailto = `mailto:myherbstudio@gmail.com?subject=${encodeURIComponent("[作品集聯絡] " + subjectMap[subject])}&body=${encodeURIComponent(`姓名：${name}\nEmail：${email}\n\n${message}`)}`;
+    const mailto = `mailto:yangruchen16@gmail.com?subject=${encodeURIComponent("[Ann ULXJ 聯絡] " + subjectMap[subject])}&body=${encodeURIComponent(`姓名：${name}\nEmail：${email}\n\n${message}`)}`;
     window.location.href = mailto;
     if(formNote) formNote.textContent = "已為你開啟郵件軟體，確認後送出即可。";
   });
@@ -248,7 +300,7 @@ if(contactForm){
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if(!prefersReducedMotion && "IntersectionObserver" in window){
-  const revealTargets = document.querySelectorAll(".process-step, .about-content, .contact-inner, .section-head");
+  const revealTargets = document.querySelectorAll(".process-step, .about-content, .contact-inner, .section-head, .travel-card, .travel-empty");
   revealTargets.forEach(el => {
     el.style.opacity = 0;
     el.style.transform = "translateY(18px)";
