@@ -27,7 +27,7 @@ const siteNav = document.querySelector(".main-nav");
 if(siteNav && !siteNav.querySelector('a[href="travel.html"]')){
   const travelLink = document.createElement("a");
   travelLink.href = "travel.html";
-  travelLink.textContent = "出國旅行";
+  travelLink.textContent = "旅行";
   const contactLink = siteNav.querySelector('a[href="contact.html"]');
   if(contactLink) siteNav.insertBefore(travelLink, contactLink);
   else siteNav.appendChild(travelLink);
